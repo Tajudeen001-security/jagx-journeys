@@ -136,10 +136,11 @@ function Products() {
         Everything JagX and JRILICENSE have not released yet
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        Five products across three families, all projected inside a mid-2032 to 2046 window. Every
-        figure below is a pre-release estimate assembled for this report — not confirmed retail
-        pricing.
+        Eleven entries across fragrance, mobility, robotics and lifestyle, all projected inside a
+        mid-2032 to 2046 window. Every figure below is a pre-release estimate assembled for this
+        report — not confirmed retail pricing.
       </p>
+
 
       <div className="mt-14 space-y-14">
         {PRODUCTS.map((p, i) => (
