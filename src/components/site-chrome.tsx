@@ -12,8 +12,11 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-        <Link to="/" className="flex items-baseline gap-2">
-          <span className="font-display text-2xl leading-none text-gold-grad">The Future</span>
+        <Link to="/" className="flex shrink-0 items-baseline gap-2">
+          <span className="whitespace-nowrap font-display text-2xl leading-none text-gold-grad">
+            The Future
+          </span>
+
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
             Est. 2026
           </span>
