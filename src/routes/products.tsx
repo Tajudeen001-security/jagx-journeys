@@ -159,7 +159,7 @@ function Products() {
               />
             </figure>
             <div>
-              <p className="rule-label">{`0${i + 1} · ${p.family}`}</p>
+              <p className="rule-label">{`${String(i + 1).padStart(2, "0")} · ${p.family}`}</p>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl">{p.name}</h2>
               <p className="mt-3 font-mono text-lg text-gold">{p.price}</p>
               <p className="mt-4 leading-relaxed text-muted-foreground">{p.body}</p>
