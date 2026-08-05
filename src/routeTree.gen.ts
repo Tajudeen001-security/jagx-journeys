@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlueprintRouteImport } from './routes/blueprint'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ValuationRouteImport } from './routes/valuation'
+import { Route as WriterRouteImport } from './routes/writer'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlueprintRoute = BlueprintRouteImport.update({
+  id: '/blueprint',
+  path: '/blueprint',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValuationRoute = ValuationRouteImport.update({
+  id: '/valuation',
+  path: '/valuation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WriterRoute = WriterRouteImport.update({
+  id: '/writer',
+  path: '/writer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blueprint': typeof BlueprintRoute
+  '/products': typeof ProductsRoute
+  '/valuation': typeof ValuationRoute
+  '/writer': typeof WriterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blueprint': typeof BlueprintRoute
+  '/products': typeof ProductsRoute
+  '/valuation': typeof ValuationRoute
+  '/writer': typeof WriterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blueprint': typeof BlueprintRoute
+  '/products': typeof ProductsRoute
+  '/valuation': typeof ValuationRoute
+  '/writer': typeof WriterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/blueprint' | '/products' | '/valuation' | '/writer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/blueprint' | '/products' | '/valuation' | '/writer'
+  id: '__root__' | '/' | '/blueprint' | '/products' | '/valuation' | '/writer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlueprintRoute: typeof BlueprintRoute
+  ProductsRoute: typeof ProductsRoute
+  ValuationRoute: typeof ValuationRoute
+  WriterRoute: typeof WriterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +88,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blueprint': {
+      id: '/blueprint'
+      path: '/blueprint'
+      fullPath: '/blueprint'
+      preLoaderRoute: typeof BlueprintRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/valuation': {
+      id: '/valuation'
+      path: '/valuation'
+      fullPath: '/valuation'
+      preLoaderRoute: typeof ValuationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/writer': {
+      id: '/writer'
+      path: '/writer'
+      fullPath: '/writer'
+      preLoaderRoute: typeof WriterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlueprintRoute: BlueprintRoute,
+  ProductsRoute: ProductsRoute,
+  ValuationRoute: ValuationRoute,
+  WriterRoute: WriterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
