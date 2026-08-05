@@ -3,6 +3,13 @@ import { Kicker } from "../components/site-chrome";
 import perfume from "../assets/perfume.jpg";
 import robot from "../assets/robot.jpg";
 import car from "../assets/car-hero.jpg";
+import perfumeReal from "../assets/perfume-real.png.asset.json";
+import carReal from "../assets/car-real.png.asset.json";
+import robotReal from "../assets/robot-real.png.asset.json";
+import kitFull from "../assets/kit-full.png.asset.json";
+import kitWardrobe from "../assets/kit-wardrobe.png.asset.json";
+import conceptDuo from "../assets/concept-duo.png.asset.json";
+
 
 export const Route = createFileRoute("/products")({
   head: () => ({
