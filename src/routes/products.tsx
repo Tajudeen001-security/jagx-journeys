@@ -123,6 +123,9 @@ const PRODUCTS = [
     body: "A scale study of the domestic vehicle in iridescent blue, glass-canopied and badged AUTONOMOUS DRIVE SYSTEM · SELF-NAVIGATING INTELLIGENCE, shown beside the parfum. It is a design-language exercise rather than a product: the compact single-volume body is where the $20,000 floor of the domestic range most plausibly lands.",
     facts: ["Single-volume compact body", "Full glass canopy", "Design language for the volume car"],
   },
+];
+
+
 
 
 function Products() {
