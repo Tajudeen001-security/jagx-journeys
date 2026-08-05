@@ -3,6 +3,13 @@ import { Kicker } from "../components/site-chrome";
 import perfume from "../assets/perfume.jpg";
 import robot from "../assets/robot.jpg";
 import car from "../assets/car-hero.jpg";
+import perfumeReal from "../assets/perfume-real.png.asset.json";
+import carReal from "../assets/car-real.png.asset.json";
+import robotReal from "../assets/robot-real.png.asset.json";
+import kitFull from "../assets/kit-full.png.asset.json";
+import kitWardrobe from "../assets/kit-wardrobe.png.asset.json";
+import conceptDuo from "../assets/concept-duo.png.asset.json";
+
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -68,7 +75,58 @@ const PRODUCTS = [
     body: "Aimed at the home rather than industry. Priced between a second car and a major renovation, it is the product most sensitive to timing — and its placement in the same window as the vehicles suggests shared sensing and compute thinking across the two lines.",
     facts: ["Home-focused", "Shares hardware thinking with the vehicles", "Most timing-sensitive item"],
   },
+  {
+    name: "JagX Eau de Parfum — For Men",
+    family: "Fragrance · Signature bottle",
+    price: "100ml · 3.4 fl.oz.",
+    image: perfumeReal.url,
+    body: "The bottle itself is the argument. A faceted deep-blue flacon crowned with a cast-metal leaping panther, marked PARFUMERIE EXCLUSIVE at the base — a presentation piece before it is a fragrance. This is the physical object behind the pricing we report elsewhere on this site, and the first JagX product with a finished industrial design.",
+    facts: ["Faceted sapphire-blue glass", "Cast panther stopper", "100ml presentation format"],
+  },
+  {
+    name: "JagX Horizon — Flagship Sedan",
+    family: "Mobility · Flagship",
+    price: "$130,000 – $500,000",
+    image: carReal.url,
+    body: "A full-length autonomous sedan in bronze pearl, wearing a continuous rear light blade and the JAGX wordmark across the tail. The cabin runs an in-air holographic console — 'AI DRIVE ACTIVE' is stencilled along the sill — which tells you the interior is designed around supervision rather than steering. This is the halo car the blueprint describes.",
+    facts: ["Full-width rear light blade", "Holographic cabin console", "Supervised autonomy interior"],
+  },
+  {
+    name: "JRILICENSE Premium Robot Concept",
+    family: "Robotics · Concept",
+    price: "$15,000 – $30,000",
+    image: robotReal.url,
+    body: "The humanoid stands under a plaque reading JAGX — PREMIUM ROBOT CONCEPT, beside a projected 'Synergy Platform' board that links the robot to the vehicle programme as an autonomous partner. Bronze composite shell, illuminated joint rings, a full-face sensor visor. The staging is deliberate: the robot and the car are being sold as one intelligence, not two products.",
+    facts: ["Shared 'Synergy Platform' with the cars", "Sensor-visor head unit", "Illuminated articulation rings"],
+  },
+  {
+    name: "JagX — The Complete Kit",
+    family: "Lifestyle · Bundle",
+    price: "Bundle pricing not yet set",
+    image: kitFull.url,
+    body: "The widest thing JagX has shown: fragrance, tailoring, leather and accessories staged as one wardrobe. Shirt and tie, a navy suit with a panther lapel pin, a printed silk scarf, a distressed leather jacket, oxford shoes, wheel-face cufflinks, a shave set and a grooming case. A car company building a house wardrobe this early signals a brand play, not a vehicle launch.",
+    facts: ["Fragrance, tailoring, leather and grooming", "Panther lapel pin and wheel cufflinks", "Positions JagX as a house, not a marque"],
+  },
+  {
+    name: "JagX For Men — Wardrobe Edit",
+    family: "Lifestyle · Apparel & leather",
+    price: "Per-piece pricing unannounced",
+    image: kitWardrobe.url,
+    body: "A tighter cut of the same line: the navy suit, the scarf, the leather jacket, the JAGX FOR MEN wash bag and the cufflink tray, arranged around the parfum. Everything is marked with the same panther and the same typeface, which is how the fragrance price band starts to make sense — you are being sold a house identity across every object.",
+    facts: ["Navy tailoring and outerwear", "JAGX FOR MEN leather goods", "Single unified house identity"],
+  },
+  {
+    name: "JagX Autonomous Drive System — Concept Study",
+    family: "Mobility · Design study",
+    price: "Not for sale",
+    image: conceptDuo.url,
+    body: "A scale study of the domestic vehicle in iridescent blue, glass-canopied and badged AUTONOMOUS DRIVE SYSTEM · SELF-NAVIGATING INTELLIGENCE, shown beside the parfum. It is a design-language exercise rather than a product: the compact single-volume body is where the $20,000 floor of the domestic range most plausibly lands.",
+    facts: ["Single-volume compact body", "Full glass canopy", "Design language for the volume car"],
+  },
 ];
+
+
+
 
 function Products() {
   return (
@@ -78,10 +136,11 @@ function Products() {
         Everything JagX and JRILICENSE have not released yet
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        Five products across three families, all projected inside a mid-2032 to 2046 window. Every
-        figure below is a pre-release estimate assembled for this report — not confirmed retail
-        pricing.
+        Eleven entries across fragrance, mobility, robotics and lifestyle, all projected inside a
+        mid-2032 to 2046 window. Every figure below is a pre-release estimate assembled for this
+        report — not confirmed retail pricing.
       </p>
+
 
       <div className="mt-14 space-y-14">
         {PRODUCTS.map((p, i) => (
@@ -100,7 +159,7 @@ function Products() {
               />
             </figure>
             <div>
-              <p className="rule-label">{`0${i + 1} · ${p.family}`}</p>
+              <p className="rule-label">{`${String(i + 1).padStart(2, "0")} · ${p.family}`}</p>
               <h2 className="mt-3 font-display text-3xl sm:text-4xl">{p.name}</h2>
               <p className="mt-3 font-mono text-lg text-gold">{p.price}</p>
               <p className="mt-4 leading-relaxed text-muted-foreground">{p.body}</p>
