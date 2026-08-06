@@ -1,27 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Kicker } from "../components/site-chrome";
+import { getRequestOrigin } from "../lib/origin.functions";
+import { socialMeta } from "../lib/social-meta";
 import blueprint from "../assets/blueprint.jpg";
 
 export const Route = createFileRoute("/blueprint")({
-  head: () => ({
-    meta: [
-      { title: "The Leaked Blueprint Behind the JagX Car — The Future" },
-      {
-        name: "description",
-        content:
-          "How a leaked engineering blueprint revealed the shape of the JagX self-driving car, why the vehicle is assembled rather than fabricated, and what the Chinese parts collaboration means.",
-      },
-      { property: "og:title", content: "The Leaked Blueprint Behind the JagX Car" },
-      {
-        property: "og:description",
-        content:
-          "An engineering document, not a press render: what the leaked JagX blueprint shows and what it does not.",
-      },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "/blueprint" },
-    ],
+  loader: async () => ({ origin: await getRequestOrigin() }),
+  head: ({ loaderData }) => ({
+    meta: socialMeta({
+      origin: loaderData?.origin ?? "",
+      path: "/blueprint",
+      title: "The Leaked Blueprint Behind the JagX Car — The Future",
+      description:
+        "How a leaked engineering blueprint revealed the shape of the JagX self-driving car, why the vehicle is assembled rather than fabricated, and what the Chinese parts collaboration means.",
+      image: "/og/blueprint.jpg",
+    }),
     links: [{ rel: "canonical", href: "/blueprint" }],
   }),
+
   component: Blueprint,
 });
 

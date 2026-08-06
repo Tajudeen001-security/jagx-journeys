@@ -1,25 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Kicker } from "../components/site-chrome";
+import { getRequestOrigin } from "../lib/origin.functions";
+import { socialMeta } from "../lib/social-meta";
 
 export const Route = createFileRoute("/writer")({
-  head: () => ({
-    meta: [
-      { title: "Sandhya Ramesh — The Writer Behind The Future" },
-      {
-        name: "description",
-        content:
-          "Sandhya Ramesh is the writer and publisher of The Future, the first outlet to report the unreleased JagX and JRILICENSE product slate and its 2032–2046 launch window.",
-      },
-      { property: "og:title", content: "Sandhya Ramesh — The Writer Behind The Future" },
-      {
-        property: "og:description",
-        content:
-          "Reporting, method and standards behind the first published account of the JagX and JRILICENSE pipeline.",
-      },
-      { property: "og:type", content: "profile" },
-      { property: "og:url", content: "/writer" },
-    ],
+  loader: async () => ({ origin: await getRequestOrigin() }),
+  head: ({ loaderData }) => ({
+    meta: socialMeta({
+      origin: loaderData?.origin ?? "",
+      path: "/writer",
+      title: "Sandhya Ramesh — The Writer Behind The Future",
+      description:
+        "Sandhya Ramesh is the writer and publisher of The Future, the first outlet to report the unreleased JagX and JRILICENSE product slate and its 2032–2046 launch window.",
+      image: "/og/home.jpg",
+      type: "profile",
+    }),
     links: [{ rel: "canonical", href: "/writer" }],
+
     scripts: [
       {
         type: "application/ld+json",

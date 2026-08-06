@@ -1,28 +1,24 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Kicker, Stat } from "../components/site-chrome";
+import { getRequestOrigin } from "../lib/origin.functions";
+import { socialMeta } from "../lib/social-meta";
 import carHero from "../assets/car-hero.jpg";
 import perfume from "../assets/perfume.jpg";
 import robot from "../assets/robot.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "The Future — Inside JagX and JRILICENSE Before Launch" },
-      {
-        name: "description",
-        content:
-          "The first published report on JagX and JRILICENSE: unreleased perfumes, self-driving cars and household robots projected for 2032–2046, with prices, valuation and a leaked blueprint.",
-      },
-      { property: "og:title", content: "The Future — Inside JagX and JRILICENSE Before Launch" },
-      {
-        property: "og:description",
-        content:
-          "An exclusive first report by Sandhya Ramesh on the unreleased JagX and JRILICENSE product pipeline, pricing bands and the leaked car blueprint.",
-      },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "/" },
-    ],
+  loader: async () => ({ origin: await getRequestOrigin() }),
+  head: ({ loaderData }) => ({
+    meta: socialMeta({
+      origin: loaderData?.origin ?? "",
+      path: "/",
+      title: "The Future — Inside JagX and JRILICENSE Before Launch",
+      description:
+        "The first published report on JagX and JRILICENSE: unreleased perfumes, self-driving cars, household robots and the JagX software line projected for 2032–2046, with prices and a leaked blueprint.",
+      image: "/og/home.jpg",
+    }),
     links: [{ rel: "canonical", href: "/" }],
+
     scripts: [
       {
         type: "application/ld+json",

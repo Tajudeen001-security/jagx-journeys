@@ -1,26 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Kicker, Stat } from "../components/site-chrome";
+import { getRequestOrigin } from "../lib/origin.functions";
+import { socialMeta } from "../lib/social-meta";
 
 export const Route = createFileRoute("/valuation")({
-  head: () => ({
-    meta: [
-      { title: "JagX & JRILICENSE Valuation in 2026 — The Future" },
-      {
-        name: "description",
-        content:
-          "What JagX and JRILICENSE are worth in August 2026, what owner Gbadamosi Tajudeen Olajide is worth, and the distance between today's figures and a $500,000 flagship.",
-      },
-      { property: "og:title", content: "JagX & JRILICENSE Valuation in 2026" },
-      {
-        property: "og:description",
-        content:
-          "A $3,000–$20,000 operation planning a half-million-dollar vehicle: the gap, measured honestly.",
-      },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "/valuation" },
-    ],
+  loader: async () => ({ origin: await getRequestOrigin() }),
+  head: ({ loaderData }) => ({
+    meta: socialMeta({
+      origin: loaderData?.origin ?? "",
+      path: "/valuation",
+      title: "JagX & JRILICENSE Valuation in 2026 — The Future",
+      description:
+        "What JagX and JRILICENSE are worth in August 2026, what founder Gbadamosi Tajudeen Olajide is worth, and the distance between today's figures and a $500,000 flagship.",
+      image: "/og/home.jpg",
+    }),
     links: [{ rel: "canonical", href: "/valuation" }],
   }),
+
   component: Valuation,
 });
 

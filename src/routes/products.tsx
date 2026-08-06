@@ -1,38 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Kicker } from "../components/site-chrome";
+import { getRequestOrigin } from "../lib/origin.functions";
+import { socialMeta } from "../lib/social-meta";
 import perfume from "../assets/perfume.jpg";
 import robot from "../assets/robot.jpg";
 import car from "../assets/car-hero.jpg";
-import perfumeReal from "../assets/perfume-real.png.asset.json";
-import carReal from "../assets/car-real.png.asset.json";
-import robotReal from "../assets/robot-real.png.asset.json";
-import kitFull from "../assets/kit-full.png.asset.json";
-import kitWardrobe from "../assets/kit-wardrobe.png.asset.json";
-import conceptDuo from "../assets/concept-duo.png.asset.json";
+import perfumeReal from "../assets/perfume-real.png";
+import carReal from "../assets/car-real.png";
+import robotReal from "../assets/robot-real.png";
+import kitFull from "../assets/kit-full.png";
+import kitWardrobe from "../assets/kit-wardrobe.png";
+import conceptDuo from "../assets/concept-duo.png";
+import jagxVision from "../assets/jagx-vision.jpg";
+import jagxDatas from "../assets/jagx-datas.jpg";
+import jagxAi from "../assets/jagx-ai.jpg";
+import jagxApi from "../assets/jagx-api.jpg";
+import jagxBuddy from "../assets/jagx-buddy.jpg";
 
 
 export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "JagX & JRILICENSE Products and Projected Prices — The Future" },
-      {
-        name: "description",
-        content:
-          "Every unreleased JagX and JRILICENSE product: standard and premium perfume, two self-driving cars and the household robot, with projected price bands for the 2032–2046 window.",
-      },
-      { property: "og:title", content: "JagX & JRILICENSE Products and Projected Prices" },
-      {
-        property: "og:description",
-        content:
-          "Perfume from $2,500, autonomy from $20,000 to $500,000, robotics from $15,000 — the full unreleased slate.",
-      },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "/products" },
-    ],
+  loader: async () => ({ origin: await getRequestOrigin() }),
+  head: ({ loaderData }) => ({
+    meta: socialMeta({
+      origin: loaderData?.origin ?? "",
+      path: "/products",
+      title: "JagX & JRILICENSE Products and Projected Prices — The Future",
+      description:
+        "Every unreleased JagX and JRILICENSE product: standard and premium perfume, two self-driving cars, the household robot, the lifestyle wardrobe and the JagX software line, with projected price bands for 2032–2046.",
+      image: "/og/products.jpg",
+    }),
     links: [{ rel: "canonical", href: "/products" }],
   }),
   component: Products,
 });
+
 
 const PRODUCTS = [
   {
@@ -79,7 +80,7 @@ const PRODUCTS = [
     name: "JagX Eau de Parfum — For Men",
     family: "Fragrance · Signature bottle",
     price: "100ml · 3.4 fl.oz.",
-    image: perfumeReal.url,
+    image: perfumeReal,
     body: "The bottle itself is the argument. A faceted deep-blue flacon crowned with a cast-metal leaping panther, marked PARFUMERIE EXCLUSIVE at the base — a presentation piece before it is a fragrance. This is the physical object behind the pricing we report elsewhere on this site, and the first JagX product with a finished industrial design.",
     facts: ["Faceted sapphire-blue glass", "Cast panther stopper", "100ml presentation format"],
   },
@@ -87,7 +88,7 @@ const PRODUCTS = [
     name: "JagX Horizon — Flagship Sedan",
     family: "Mobility · Flagship",
     price: "$130,000 – $500,000",
-    image: carReal.url,
+    image: carReal,
     body: "A full-length autonomous sedan in bronze pearl, wearing a continuous rear light blade and the JAGX wordmark across the tail. The cabin runs an in-air holographic console — 'AI DRIVE ACTIVE' is stencilled along the sill — which tells you the interior is designed around supervision rather than steering. This is the halo car the blueprint describes.",
     facts: ["Full-width rear light blade", "Holographic cabin console", "Supervised autonomy interior"],
   },
@@ -95,7 +96,7 @@ const PRODUCTS = [
     name: "JRILICENSE Premium Robot Concept",
     family: "Robotics · Concept",
     price: "$15,000 – $30,000",
-    image: robotReal.url,
+    image: robotReal,
     body: "The humanoid stands under a plaque reading JAGX — PREMIUM ROBOT CONCEPT, beside a projected 'Synergy Platform' board that links the robot to the vehicle programme as an autonomous partner. Bronze composite shell, illuminated joint rings, a full-face sensor visor. The staging is deliberate: the robot and the car are being sold as one intelligence, not two products.",
     facts: ["Shared 'Synergy Platform' with the cars", "Sensor-visor head unit", "Illuminated articulation rings"],
   },
@@ -103,7 +104,7 @@ const PRODUCTS = [
     name: "JagX — The Complete Kit",
     family: "Lifestyle · Bundle",
     price: "Bundle pricing not yet set",
-    image: kitFull.url,
+    image: kitFull,
     body: "The widest thing JagX has shown: fragrance, tailoring, leather and accessories staged as one wardrobe. Shirt and tie, a navy suit with a panther lapel pin, a printed silk scarf, a distressed leather jacket, oxford shoes, wheel-face cufflinks, a shave set and a grooming case. A car company building a house wardrobe this early signals a brand play, not a vehicle launch.",
     facts: ["Fragrance, tailoring, leather and grooming", "Panther lapel pin and wheel cufflinks", "Positions JagX as a house, not a marque"],
   },
@@ -111,7 +112,7 @@ const PRODUCTS = [
     name: "JagX For Men — Wardrobe Edit",
     family: "Lifestyle · Apparel & leather",
     price: "Per-piece pricing unannounced",
-    image: kitWardrobe.url,
+    image: kitWardrobe,
     body: "A tighter cut of the same line: the navy suit, the scarf, the leather jacket, the JAGX FOR MEN wash bag and the cufflink tray, arranged around the parfum. Everything is marked with the same panther and the same typeface, which is how the fragrance price band starts to make sense — you are being sold a house identity across every object.",
     facts: ["Navy tailoring and outerwear", "JAGX FOR MEN leather goods", "Single unified house identity"],
   },
@@ -119,9 +120,49 @@ const PRODUCTS = [
     name: "JagX Autonomous Drive System — Concept Study",
     family: "Mobility · Design study",
     price: "Not for sale",
-    image: conceptDuo.url,
+    image: conceptDuo,
     body: "A scale study of the domestic vehicle in iridescent blue, glass-canopied and badged AUTONOMOUS DRIVE SYSTEM · SELF-NAVIGATING INTELLIGENCE, shown beside the parfum. It is a design-language exercise rather than a product: the compact single-volume body is where the $20,000 floor of the domestic range most plausibly lands.",
     facts: ["Single-volume compact body", "Full glass canopy", "Design language for the volume car"],
+  },
+  {
+    name: "JagX Vision",
+    family: "Software · Authentication hardware",
+    price: "Pricing unannounced",
+    image: jagxVision,
+    body: "A handheld scanner for jewellery that returns a full authenticity report — stone, metal, cut, clarity, verdict — in seconds. It is the first JagX product that is useful before any of the vehicles exist, and the first that puts the house mark on a working instrument rather than a concept.",
+    facts: ["Real-or-fake verdict on jewellery", "Projected authenticity report", "Founder-led JagX software line"],
+  },
+  {
+    name: "JagX AI",
+    family: "Software · Intelligence",
+    price: "Pricing unannounced",
+    image: jagxAi,
+    body: "The intelligence layer beneath the portfolio. The same reasoning that supervises the cars and senses for the robot, packaged as a product developers can call directly. Branded, as everything here is, with the panther.",
+    facts: ["Powers vehicle supervision", "Shared with JRILICENSE robotics", "Developer-facing"],
+  },
+  {
+    name: "JagX Datas",
+    family: "Software · Backend platform",
+    price: "Pricing unannounced",
+    image: jagxDatas,
+    body: "A backend platform in the Supabase mould — database, auth, storage, APIs — with security as the headline claim rather than a paid tier. End-to-end encryption, hardened access control and audit logging across every table.",
+    facts: ["Database, auth, storage and APIs", "End-to-end encryption by default", "Audit logging on every entity"],
+  },
+  {
+    name: "JagX AI API Key System",
+    family: "Software · Developer infrastructure",
+    price: "Pricing unannounced",
+    image: jagxApi,
+    body: "Key issuance and governance for JagX AI: generate, scope, rate-limit, monitor and revoke. It is the plumbing that decides whether outside developers can build on the model safely, and it ships as its own product.",
+    facts: ["Scoped keys and rate limits", "Live usage monitoring", "Instant revocation"],
+  },
+  {
+    name: "JagX Buddy Connect",
+    family: "Software · Social platform",
+    price: "Live at jagx-buddy-connect.name.ng",
+    image: jagxBuddy,
+    body: "The connection platform running on the founder's own domain — and the most public thing the house has shipped so far. It builds the audience the rest of the slate will eventually launch into.",
+    facts: ["Live on jagx-buddy-connect.name.ng", "Audience layer for the house", "Same panther identity"],
   },
 ];
 
@@ -136,10 +177,11 @@ function Products() {
         Everything JagX and JRILICENSE have not released yet
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        Eleven entries across fragrance, mobility, robotics and lifestyle, all projected inside a
-        mid-2032 to 2046 window. Every figure below is a pre-release estimate assembled for this
-        report — not confirmed retail pricing.
+        Sixteen entries across fragrance, mobility, robotics, lifestyle and software, all projected
+        inside a mid-2032 to 2046 window. Every figure below is a pre-release estimate assembled for
+        this report — not confirmed retail pricing.
       </p>
+
 
 
       <div className="mt-14 space-y-14">
