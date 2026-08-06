@@ -124,6 +124,46 @@ const PRODUCTS = [
     body: "A scale study of the domestic vehicle in iridescent blue, glass-canopied and badged AUTONOMOUS DRIVE SYSTEM · SELF-NAVIGATING INTELLIGENCE, shown beside the parfum. It is a design-language exercise rather than a product: the compact single-volume body is where the $20,000 floor of the domestic range most plausibly lands.",
     facts: ["Single-volume compact body", "Full glass canopy", "Design language for the volume car"],
   },
+  {
+    name: "JagX Vision",
+    family: "Software · Authentication hardware",
+    price: "Pricing unannounced",
+    image: jagxVision,
+    body: "A handheld scanner for jewellery that returns a full authenticity report — stone, metal, cut, clarity, verdict — in seconds. It is the first JagX product that is useful before any of the vehicles exist, and the first that puts the house mark on a working instrument rather than a concept.",
+    facts: ["Real-or-fake verdict on jewellery", "Projected authenticity report", "Founder-led JagX software line"],
+  },
+  {
+    name: "JagX AI",
+    family: "Software · Intelligence",
+    price: "Pricing unannounced",
+    image: jagxAi,
+    body: "The intelligence layer beneath the portfolio. The same reasoning that supervises the cars and senses for the robot, packaged as a product developers can call directly. Branded, as everything here is, with the panther.",
+    facts: ["Powers vehicle supervision", "Shared with JRILICENSE robotics", "Developer-facing"],
+  },
+  {
+    name: "JagX Datas",
+    family: "Software · Backend platform",
+    price: "Pricing unannounced",
+    image: jagxDatas,
+    body: "A backend platform in the Supabase mould — database, auth, storage, APIs — with security as the headline claim rather than a paid tier. End-to-end encryption, hardened access control and audit logging across every table.",
+    facts: ["Database, auth, storage and APIs", "End-to-end encryption by default", "Audit logging on every entity"],
+  },
+  {
+    name: "JagX AI API Key System",
+    family: "Software · Developer infrastructure",
+    price: "Pricing unannounced",
+    image: jagxApi,
+    body: "Key issuance and governance for JagX AI: generate, scope, rate-limit, monitor and revoke. It is the plumbing that decides whether outside developers can build on the model safely, and it ships as its own product.",
+    facts: ["Scoped keys and rate limits", "Live usage monitoring", "Instant revocation"],
+  },
+  {
+    name: "JagX Buddy Connect",
+    family: "Software · Social platform",
+    price: "Live at jagx-buddy-connect.name.ng",
+    image: jagxBuddy,
+    body: "The connection platform running on the founder's own domain — and the most public thing the house has shipped so far. It builds the audience the rest of the slate will eventually launch into.",
+    facts: ["Live on jagx-buddy-connect.name.ng", "Audience layer for the house", "Same panther identity"],
+  },
 ];
 
 
@@ -137,10 +177,11 @@ function Products() {
         Everything JagX and JRILICENSE have not released yet
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        Eleven entries across fragrance, mobility, robotics and lifestyle, all projected inside a
-        mid-2032 to 2046 window. Every figure below is a pre-release estimate assembled for this
-        report — not confirmed retail pricing.
+        Sixteen entries across fragrance, mobility, robotics, lifestyle and software, all projected
+        inside a mid-2032 to 2046 window. Every figure below is a pre-release estimate assembled for
+        this report — not confirmed retail pricing.
       </p>
+
 
 
       <div className="mt-14 space-y-14">
