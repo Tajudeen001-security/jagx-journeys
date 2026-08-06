@@ -1,38 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Kicker } from "../components/site-chrome";
+import { getRequestOrigin } from "../lib/origin.functions";
+import { socialMeta } from "../lib/social-meta";
 import perfume from "../assets/perfume.jpg";
 import robot from "../assets/robot.jpg";
 import car from "../assets/car-hero.jpg";
-import perfumeReal from "../assets/perfume-real.png.asset.json";
-import carReal from "../assets/car-real.png.asset.json";
-import robotReal from "../assets/robot-real.png.asset.json";
-import kitFull from "../assets/kit-full.png.asset.json";
-import kitWardrobe from "../assets/kit-wardrobe.png.asset.json";
-import conceptDuo from "../assets/concept-duo.png.asset.json";
+import perfumeReal from "../assets/perfume-real.png";
+import carReal from "../assets/car-real.png";
+import robotReal from "../assets/robot-real.png";
+import kitFull from "../assets/kit-full.png";
+import kitWardrobe from "../assets/kit-wardrobe.png";
+import conceptDuo from "../assets/concept-duo.png";
+import jagxVision from "../assets/jagx-vision.jpg";
+import jagxDatas from "../assets/jagx-datas.jpg";
+import jagxAi from "../assets/jagx-ai.jpg";
+import jagxApi from "../assets/jagx-api.jpg";
+import jagxBuddy from "../assets/jagx-buddy.jpg";
 
 
 export const Route = createFileRoute("/products")({
-  head: () => ({
-    meta: [
-      { title: "JagX & JRILICENSE Products and Projected Prices — The Future" },
-      {
-        name: "description",
-        content:
-          "Every unreleased JagX and JRILICENSE product: standard and premium perfume, two self-driving cars and the household robot, with projected price bands for the 2032–2046 window.",
-      },
-      { property: "og:title", content: "JagX & JRILICENSE Products and Projected Prices" },
-      {
-        property: "og:description",
-        content:
-          "Perfume from $2,500, autonomy from $20,000 to $500,000, robotics from $15,000 — the full unreleased slate.",
-      },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "/products" },
-    ],
+  loader: async () => ({ origin: await getRequestOrigin() }),
+  head: ({ loaderData }) => ({
+    meta: socialMeta({
+      origin: loaderData?.origin ?? "",
+      path: "/products",
+      title: "JagX & JRILICENSE Products and Projected Prices — The Future",
+      description:
+        "Every unreleased JagX and JRILICENSE product: standard and premium perfume, two self-driving cars, the household robot, the lifestyle wardrobe and the JagX software line, with projected price bands for 2032–2046.",
+      image: "/og/products.jpg",
+    }),
     links: [{ rel: "canonical", href: "/products" }],
   }),
   component: Products,
 });
+
 
 const PRODUCTS = [
   {
