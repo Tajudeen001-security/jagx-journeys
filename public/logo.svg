@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="JagX">
+  <rect width="128" height="128" rx="24" fill="#0a0a0a"/>
+  <text x="64" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#c9a227">JX</text>
+  <path d="M32 96 L64 28 L96 96" fill="none" stroke="#c9a227" stroke-width="3" opacity="0.35"/>
+</svg>
