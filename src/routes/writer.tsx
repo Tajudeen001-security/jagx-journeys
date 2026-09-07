@@ -11,22 +11,11 @@ export const Route = createFileRoute("/writer")({
       path: "/writer",
       title: "About us — JagX & JRILICENSE",
       description:
-        "About JagX & JRILICENSE. Founded 15 August 2022. Slogans, anthem, capital, expansion, and honest progress including JagX Connect first-year revenue.",
+        "About JagX & JRILICENSE. Founded 15 August 2022. Slogans, anthems, progress and expansion.",
       image: "/og/home.jpg",
       type: "website",
     }),
     links: [{ rel: "canonical", href: "/writer" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "JagX & JRILICENSE",
-          foundingDate: "2022-08-15",
-        }),
-      },
-    ],
   }),
   component: AboutUs,
 });
@@ -35,12 +24,11 @@ function AboutUs() {
   return (
     <div className="mx-auto max-w-3xl px-5 py-14">
       <Kicker>About us</Kicker>
-      <h1 className="mt-4 font-display text-4xl sm:text-6xl">JagX & JRILICENSE</h1>
+      <h1 className="mt-4 font-display text-4xl sm:text-6xl">JagX &amp; JRILICENSE</h1>
       <p className="mt-5 leading-relaxed text-muted-foreground">
         We write and publish this site ourselves. Founded{" "}
         <span className="text-foreground">15 August 2022</span>. JRILICENSE established{" "}
-        <span className="text-foreground">2025</span>. No leftover contractor credit. No external
-        builder badge.
+        <span className="text-foreground">2025</span>. No external builder badge.
       </p>
 
       <div className="mt-10 space-y-5 text-[17px] leading-8 text-muted-foreground">
@@ -53,8 +41,12 @@ function AboutUs() {
           Together: “From Lagos to the last mile — Africa builds, Africa protects.”
         </p>
 
-        <h2 className="pt-4 font-display text-2xl text-foreground">Anthem</h2>
-        <div className="space-y-3 border-l-2 border-gold/40 pl-5 font-serif text-muted-foreground">
+        <h2 className="pt-4 font-display text-2xl text-foreground">House anthem</h2>
+        <p className="text-sm text-muted-foreground">
+          Written as a company hymn — geography of where we build first, responsibility for our own
+          stack, no attack on any region of the world.
+        </p>
+        <div className="space-y-3 border-l-2 border-gold/40 pl-5 font-serif">
           <p>
             From the Niger to the Cape of Hope,
             <br />
@@ -69,14 +61,45 @@ function AboutUs() {
             <br />
             JRILICENSE holds the keys of right.
             <br />
-            No stranger hand shall write our fate;
+            We write our work with steady hand;
             <br />
-            We build the shield, we open the gate.
+            We build the shield across the land.
           </p>
           <p className="text-foreground italic">
-            Stand, Africa. Stand with the mark of JX.
+            Stand with the mark of JX.
             <br />
             The future is licensed. The future is ours.
+          </p>
+        </div>
+
+        <h2 className="pt-4 font-display text-2xl text-foreground">Shield verse</h2>
+        <div className="space-y-3 border-l-2 border-gold/40 pl-5 font-serif">
+          <p>
+            Not one flag alone, but many under care,
+            <br />
+            One standard of kit, one duty to share.
+            <br />
+            The human commands; the system obeys;
+            <br />
+            The record is kept through nights and days.
+          </p>
+          <p className="text-foreground italic">
+            Protect the people. Honour the law.
+            <br />
+            Serve the continent — that is our call.
+          </p>
+        </div>
+
+        <h2 className="pt-4 font-display text-2xl text-foreground">JRILICENSE verse</h2>
+        <div className="space-y-3 border-l-2 border-gold/40 pl-5 font-serif">
+          <p>
+            License the model, protect the design,
+            <br />
+            The mark and the code remain yours and mine.
+            <br />
+            What we invent, we register true —
+            <br />
+            The stack stays whole in whatever we do.
           </p>
         </div>
 
@@ -84,20 +107,8 @@ function AboutUs() {
         <p>
           Most lines are still in build. The one clear commercial signal is{" "}
           <span className="text-foreground">JagX Connect</span> — about{" "}
-          <span className="text-gold">₦195,250</span> in its first year. Everything else has not yet
-          contributed to revenue.
-        </p>
-        <p>
-          Starting capital for JagX in 2022 was lean (roughly ₦45–85 million). JRILICENSE in 2025
-          needed a higher setup floor (about ₦180–350 million) for legal, IP, and compliance.
-        </p>
-
-        <h2 className="pt-4 font-display text-2xl text-foreground">Intelligent Military</h2>
-        <p>
-          JagX Intelligent Military sits under Shield. It is not a private army and not locked to one
-          country. We build technology, doctrine, and equipment standards African states can share:
-          C4I blocks, secure comms, training, security dress, and operational kit designed for African
-          climates. Human oversight stays non-negotiable.
+          <span className="text-gold">₦195,250</span> in its first year. Opening capital for the
+          companies is confidential and is not listed on this site.
         </p>
 
         <h2 className="pt-4 font-display text-2xl text-foreground">Expansion</h2>
@@ -108,7 +119,7 @@ function AboutUs() {
         </p>
 
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
-          JagX & JRILICENSE · Official · 2026
+          JagX &amp; JRILICENSE · Official · 2026
         </p>
       </div>
     </div>
