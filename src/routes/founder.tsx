@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Kicker } from "../components/site-chrome";
 import { getRequestOrigin } from "../lib/origin.functions";
 import { socialMeta } from "../lib/social-meta";
-import founder1 from "../assets/founder-1.png";
-import founder2 from "../assets/founder-2.png";
 import jagxVision from "../assets/jagx-vision.jpg";
 import jagxDatas from "../assets/jagx-datas.jpg";
 import jagxAi from "../assets/jagx-ai.jpg";
@@ -18,8 +16,8 @@ export const Route = createFileRoute("/founder")({
       path: "/founder",
       title: "Founder — Gbadamosi Tajudeen (JagwaX) | JagX & JRILICENSE",
       description:
-        "Gbadamosi Tajudeen Olajide, known as JagwaX, founded JagX on 15 August 2022 and JRILICENSE in 2025. Official portfolio across AI, Connect, mobility, fragrance and more.",
-      image: "/og/founder.jpg",
+        "Gbadamosi Tajudeen Olajide, known as JagwaX, founded JagX on 15 August 2022 and JRILICENSE in 2025.",
+      image: "/og/home.jpg",
       type: "profile",
     }),
     links: [{ rel: "canonical", href: "/founder" }],
@@ -89,69 +87,51 @@ function Founder() {
   return (
     <div className="mx-auto max-w-6xl px-5 py-14">
       <Kicker>The founder</Kicker>
-      <div className="mt-6 grid gap-10 md:grid-cols-2 md:items-center">
-        <div>
-          <h1 className="font-display text-4xl leading-[1.05] sm:text-6xl">
-            Gbadamosi Tajudeen, known as{" "}
-            <span className="text-gold-grad">JagwaX</span>
-          </h1>
-          <p className="mt-5 text-[17px] leading-8 text-muted-foreground">
-            Founder of JagX (15 August 2022) and JRILICENSE (2025). The work is meant to arrive with
-            a clear mark — intelligence that stays home, security that travels the continent — from
-            Nigeria outward across Africa.
-          </p>
+      <div className="mt-6 max-w-3xl">
+        <h1 className="font-display text-4xl leading-[1.05] sm:text-6xl">
+          Gbadamosi Tajudeen, known as{" "}
+          <span className="text-gold-grad">JagwaX</span>
+        </h1>
+        <p className="mt-5 text-[17px] leading-8 text-muted-foreground">
+          Founder of JagX (15 August 2022) and JRILICENSE (2025). The work is meant to arrive with a
+          clear mark — intelligence that stays home, security that travels the continent — from
+          Nigeria outward across Africa.
+        </p>
+        <div className="mt-8 flex items-center gap-4 rounded-md border border-border bg-card/40 p-5">
+          <img src="/logo.svg" alt="JagX" width={48} height={48} className="h-12 w-12" />
+          <div>
+            <p className="font-display text-xl text-gold-grad">JagX &amp; JRILICENSE</p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+              Official founder page · no stock portraits
+            </p>
+          </div>
         </div>
-        <figure className="card-lift overflow-hidden rounded-md">
-          <img
-            src={founder1}
-            alt="Gbadamosi Tajudeen, known as JagwaX"
-            width={896}
-            height={1152}
-            className="h-[28rem] w-full object-cover object-top"
-          />
-          <figcaption className="border-t border-border px-4 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70">
-            JagwaX · Portrait I
-          </figcaption>
-        </figure>
       </div>
 
-      <div className="mt-16 grid gap-10 md:grid-cols-2 md:items-center">
-        <figure className="card-lift order-2 overflow-hidden rounded-md md:order-1">
-          <img
-            src={founder2}
-            alt="JagwaX second portrait"
-            width={896}
-            height={1152}
-            loading="lazy"
-            className="h-[28rem] w-full object-cover object-top"
-          />
-          <figcaption className="border-t border-border px-4 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70">
-            JagwaX · Portrait II
-          </figcaption>
-        </figure>
-        <div className="order-1 space-y-5 text-[17px] leading-8 text-muted-foreground md:order-2">
-          <h2 className="font-display text-3xl text-foreground">Why the work comes first</h2>
-          <p>
-            The public face of the house is the panther mark and the product stack — AI, Connect,
-            mobility, fragrance, robotics, Shield and Intelligent Military. Expansion is planned from
-            Nigeria to Burkina Faso, Sierra Leone, South Africa and twelve further priority countries
-            through 2035–2045.
-          </p>
-          <p>
-            We invent under JagX. We license and protect under JRILICENSE. That is how the stack stays
-            ours.
-          </p>
-        </div>
+      <div className="mt-14 max-w-3xl space-y-5 text-[17px] leading-8 text-muted-foreground">
+        <h2 className="font-display text-3xl text-foreground">Why the work comes first</h2>
+        <p>
+          The public face of the house is the panther mark and the product stack — AI, Connect,
+          mobility, fragrance, robotics, Shield and Intelligent Military. Expansion is planned from
+          Nigeria to Burkina Faso, Sierra Leone, South Africa and twelve further priority countries
+          through 2035–2045.
+        </p>
+        <p>
+          We invent under JagX. We license and protect under JRILICENSE. That is how the stack stays
+          ours.
+        </p>
+        <p className="text-sm text-muted-foreground/80">
+          Personal photographs will appear here only when you supply them. AI or stock faces are not
+          used as the founder’s portrait.
+        </p>
       </div>
 
       <div className="mt-20">
         <Kicker>The portfolio</Kicker>
-        <h2 className="mt-4 max-w-3xl font-display text-3xl sm:text-5xl">
-          Ventures under one mark
-        </h2>
+        <h2 className="mt-4 max-w-3xl font-display text-3xl sm:text-5xl">Ventures under one mark</h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          Perfume and cars are the visible half. Infrastructure — AI, backend, API keys, Connect —
-          is how the rest gets delivered.
+          Perfume and cars are the visible half. Infrastructure — AI, backend, API keys, Connect — is
+          how the rest gets delivered.
         </p>
 
         <div className="mt-12 space-y-14">
@@ -163,7 +143,7 @@ function Founder() {
               <figure className="card-lift overflow-hidden rounded-md">
                 <img
                   src={v.image}
-                  alt={`${v.name}`}
+                  alt={v.name}
                   width={1024}
                   height={768}
                   loading="lazy"
@@ -181,7 +161,7 @@ function Founder() {
       </div>
 
       <p className="mt-16 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/60">
-        JagX & JRILICENSE · Official · Founded 15 August 2022
+        JagX &amp; JRILICENSE · Official · Founded 15 August 2022
       </p>
     </div>
   );
