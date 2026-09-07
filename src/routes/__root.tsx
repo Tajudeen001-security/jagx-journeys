@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader, SiteFooter } from "../components/site-chrome";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -79,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "The Future — JagX & JRILICENSE, reported first" },
+      { title: "JagX & JRILICENSE — Official" },
       {
         name: "description",
         content:
-          "The Future is an independent publication by Sandhya Ramesh covering the unreleased JagX and JRILICENSE product slate ahead of its 2032–2046 launch window.",
+          "Official site of JagX & JRILICENSE. Founded 15 August 2022. AI, secure social, mobility, robotics, fragrance, and JagX Intelligent Military for the protection of Africa. Launch window 2032–2046.",
       },
-      { name: "author", content: "Sandhya Ramesh" },
-      { property: "og:site_name", content: "The Future" },
+      { name: "author", content: "JagX & JRILICENSE" },
+      { property: "og:site_name", content: "JagX & JRILICENSE" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -105,11 +104,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "NewsMediaOrganization",
-          name: "The Future",
+          "@type": "Organization",
+          name: "JagX & JRILICENSE",
           description:
-            "Independent publication reporting the unreleased JagX and JRILICENSE product slate.",
-          founder: { "@type": "Person", name: "Sandhya Ramesh" },
+            "Technology group building AI, secure social, mobility, robotics, fragrance and continental security systems. Founded 15 August 2022 in Nigeria.",
+          foundingDate: "2022-08-15",
+          slogan: "Intelligence that stays home. Security that travels the continent.",
         }),
       },
     ],
@@ -140,7 +140,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <SiteHeader />
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <main>
         <Outlet />
       </main>
@@ -148,4 +147,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-
