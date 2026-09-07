@@ -2,10 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Kicker } from "../components/site-chrome";
 import { getRequestOrigin } from "../lib/origin.functions";
 import { socialMeta } from "../lib/social-meta";
-import kitFull from "../assets/kit-full.png";
-import kitWardrobe from "../assets/kit-wardrobe.png";
-import robotReal from "../assets/robot-real.png";
-import carReal from "../assets/car-real.png";
+
+/** Concept renders for army + security kit (hosted assets) */
+const IMAGES = {
+  armyService: "https://litter.catbox.moe/ckq3to.jpg",
+  armyFieldKit: "https://litter.catbox.moe/ht9ewv.jpg",
+  armyFieldModel: "https://litter.catbox.moe/fd5h8g.jpg",
+  securityShirt: "https://litter.catbox.moe/ovye7n.jpg",
+  securityFull: "https://litter.catbox.moe/7bcpqw.jpg",
+  securityTrousers: "https://litter.catbox.moe/8pdgcm.jpg",
+  carGold: "https://litter.catbox.moe/fw6vig.jpg",
+  chip: "https://litter.catbox.moe/a0hbhs.jpg",
+} as const;
 
 export const Route = createFileRoute("/military")({
   loader: async () => ({ origin: await getRequestOrigin() }),
@@ -15,7 +23,7 @@ export const Route = createFileRoute("/military")({
       path: "/military",
       title: "JagX Army & Intelligent Military — Official",
       description:
-        "JagX Intelligent Military includes army uniform programmes for partner institutions across Africa. Technology, doctrine and kit — human oversight required.",
+        "JagX army uniforms and Intelligent Military programmes for partner institutions across Africa.",
       image: "/og/home.jpg",
     }),
     links: [{ rel: "canonical", href: "/military" }],
@@ -31,85 +39,101 @@ function Military() {
         Army uniform &amp; continental protection tech
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        JagX Intelligent Military is also an <span className="text-foreground">army programme</span>:
-        dress, training standards and systems for partner institutions — not a private force for one
-        person or one capital. Human command stays non-negotiable.
+        JagX Intelligent Military includes an <span className="text-foreground">army programme</span>:
+        service dress, field kit, and systems for partner institutions — not a private force for one
+        person. Human command stays non-negotiable.
       </p>
 
-      <article className="mt-12 max-w-3xl space-y-5 text-[17px] leading-8 text-muted-foreground">
-        <h2 className="font-display text-2xl text-foreground">Why it exists</h2>
-        <p>
-          Joint security work across African borders is harder when kit, radio habits and training differ
-          everywhere. We build shared technology blocks and uniform standards that licensed institutions
-          can adopt under their own flag and law.
+      <div className="mt-12">
+        <Kicker>Army service dress</Kicker>
+        <h2 className="mt-3 font-display text-2xl text-foreground">Parade / garrison set</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          Formal olive service tunic and matching trousers, gold JX marks, black belt and shoes —
+          designed for heat and formal duty.
         </p>
-
-        <h2 className="pt-4 font-display text-2xl text-foreground">Army service dress</h2>
-        <p>
-          Full army-style set for parade, garrison and formal duty: tunic or shirt, matching trousers,
-          belt, rank placement zones, and a discrete JX / Shield mark. Fabric chosen for heat; cut for
-          real body sizes. Ceremonial and daily variants share the same silhouette language so the army
-          line is one family, not random pieces.
-        </p>
-
-        <h2 className="pt-4 font-display text-2xl text-foreground">Army field uniform</h2>
-        <p>
-          Field shirt and field trousers as a matched pair: reinforced knees and seat, cargo layout,
-          quick-dry cloth, radio routing, optional identity tag pocket. Designed for dust, heat and long
-          days — practical army kit, not a costume.
-        </p>
-
-        <h2 className="pt-4 font-display text-2xl text-foreground">Governing principles</h2>
-        <ol className="list-decimal space-y-2 pl-5">
-          <li>Human authority for high-impact decisions.</li>
-          <li>Institutional / national partners only — not a private army for sale to individuals.</li>
-          <li>Partner sovereignty and lawful use.</li>
-          <li>Audit trails on critical systems.</li>
-          <li>JRILICENSE protects designs and software.</li>
-        </ol>
-      </article>
+        <figure className="mt-6 overflow-hidden rounded-md border border-border">
+          <img
+            src={IMAGES.armyService}
+            alt="JagX army service dress uniform — full set"
+            className="mx-auto max-h-[70vh] w-full object-contain bg-black"
+            loading="lazy"
+          />
+          <figcaption className="border-t border-border p-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+            Army service dress · concept
+          </figcaption>
+        </figure>
+      </div>
 
       <div className="mt-14">
-        <Kicker>Kit on site</Kicker>
+        <Kicker>Army field uniform</Kicker>
+        <h2 className="mt-3 font-display text-2xl text-foreground">Shirt, trousers, radio routing</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Existing house kit photography. Army uniform concept renders are shown in our design brief
-          (below in chat / design pack) and will be filed into assets as production files land.
+          Matched field shirt and cargo trousers, reinforced knees, panther badge, practical for dust
+          and heat.
         </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <figure className="overflow-hidden rounded-md border border-border">
+            <img
+              src={IMAGES.armyFieldKit}
+              alt="JagX army field uniform kit flat"
+              className="h-80 w-full object-cover bg-black"
+              loading="lazy"
+            />
+            <figcaption className="border-t border-border p-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              Field kit · shirt &amp; trousers
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-md border border-border">
+            <img
+              src={IMAGES.armyFieldModel}
+              alt="JagX army field uniform on model"
+              className="h-80 w-full object-cover bg-black"
+              loading="lazy"
+            />
+            <figcaption className="border-t border-border p-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
+              Field uniform · worn
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div className="mt-14">
+        <Kicker>Security operational kit</Kicker>
+        <h2 className="mt-3 font-display text-2xl text-foreground">Navy operational set</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          Quick-dry operational shirt with RFID and radio route; matching cargo trousers; full navy set
+          with JX mark.
+        </p>
+        <div className="mt-6 grid gap-6 sm:grid-cols-3">
           {[
-            { src: kitFull, cap: "House complete kit language" },
-            { src: kitWardrobe, cap: "Shirt & soft kit direction" },
-            { src: robotReal, cap: "Support systems concept" },
-            { src: carReal, cap: "Mobility — service under JagX" },
-          ].map((img) => (
-            <figure key={img.cap} className="card-lift overflow-hidden rounded-md">
-              <img src={img.src} alt={img.cap} loading="lazy" className="h-72 w-full object-cover" />
-              <figcaption className="border-t border-border p-3 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-                {img.cap}
+            { src: IMAGES.securityShirt, cap: "Operational shirt" },
+            { src: IMAGES.securityTrousers, cap: "Operational trousers" },
+            { src: IMAGES.securityFull, cap: "Full navy set" },
+          ].map((x) => (
+            <figure key={x.cap} className="overflow-hidden rounded-md border border-border">
+              <img src={x.src} alt={x.cap} className="h-72 w-full object-cover bg-black" loading="lazy" />
+              <figcaption className="border-t border-border p-3 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
+                {x.cap}
               </figcaption>
             </figure>
           ))}
         </div>
       </div>
 
-      <article className="mt-16 max-w-3xl space-y-5 text-[17px] leading-8 text-muted-foreground">
-        <h2 className="font-display text-2xl text-foreground">Shield verse</h2>
-        <div className="border-l-2 border-gold/40 pl-5 font-serif">
-          <p>
-            Not one flag alone, but many under care,
-            <br />
-            One standard of kit, one duty to share.
-            <br />
-            The human commands; the system obeys;
-            <br />
-            The record is kept through nights and days.
-          </p>
-          <p className="mt-3 text-foreground italic">
-            Protect the people. Honour the law.
-            <br />
-            Serve the continent — that is our call.
-          </p>
-        </div>
+      <article className="mt-14 max-w-3xl space-y-5 text-[17px] leading-8 text-muted-foreground">
+        <h2 className="font-display text-2xl text-foreground">Why the army line exists</h2>
+        <p>
+          Shared kit and standards make joint work easier across borders. We design dress and systems
+          partner institutions can license under their own law and command — not a private army for
+          sale to individuals.
+        </p>
+        <h2 className="pt-2 font-display text-2xl text-foreground">Principles</h2>
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>Human authority for high-impact decisions.</li>
+          <li>Institutional partners only.</li>
+          <li>Partner sovereignty and lawful use.</li>
+          <li>JRILICENSE protects designs and software.</li>
+        </ol>
       </article>
 
       <div className="mt-12 flex flex-wrap gap-3">
@@ -117,7 +141,7 @@ function Military() {
           to="/agriculture"
           className="rounded-sm border border-gold/50 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-gold"
         >
-          Agriculture future
+          Agriculture
         </Link>
         <Link
           to="/products"
