@@ -12,23 +12,21 @@ export const Route = createFileRoute("/")({
     meta: socialMeta({
       origin: loaderData?.origin ?? "",
       path: "/",
-      title: "The Future — Inside JagX and JRILICENSE Before Launch",
+      title: "JagX & JRILICENSE — Official | Founded 15 August 2022",
       description:
-        "The first published report on JagX and JRILICENSE: unreleased perfumes, self-driving cars, household robots and the JagX software line projected for 2032–2046, with prices and a leaked blueprint.",
+        "Official site of JagX & JRILICENSE. AI, secure social, mobility, robotics, fragrance, and Intelligent Military. Founded 15 August 2022. Launch window 2032–2046.",
       image: "/og/home.jpg",
     }),
     links: [{ rel: "canonical", href: "/" }],
-
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "NewsArticle",
-          headline: "Inside JagX and JRILICENSE: the products the world has not seen yet",
-          datePublished: "2026-08-05",
-          author: { "@type": "Person", name: "Sandhya Ramesh" },
-          publisher: { "@type": "Organization", name: "The Future" },
+          "@type": "WebPage",
+          name: "JagX & JRILICENSE — Official",
+          datePublished: "2022-08-15",
+          author: { "@type": "Organization", name: "JagX & JRILICENSE" },
           about: ["JagX", "JRILICENSE", "Gbadamosi Tajudeen Olajide"],
         }),
       },
@@ -43,7 +41,7 @@ function Index() {
       <section className="relative">
         <img
           src={carHero}
-          alt="Concept rendering of the JagX autonomous luxury sedan reconstructed from a leaked blueprint"
+          alt="JagX autonomous vehicle concept from our engineering blueprints"
           width={1600}
           height={912}
           className="h-[62vh] min-h-[380px] w-full object-cover opacity-70"
@@ -51,18 +49,17 @@ function Index() {
         <div className="absolute inset-0 veil" />
         <div className="absolute inset-x-0 bottom-0">
           <div className="mx-auto max-w-6xl px-5 pb-10">
-            <Kicker>Exclusive · First publication · August 2026</Kicker>
+            <Kicker>Official · Founded 15 August 2022 · JRILICENSE 2025</Kicker>
             <h1 className="mt-5 max-w-4xl font-display text-4xl leading-[1.05] sm:text-6xl md:text-7xl">
-              Inside <span className="text-gold-grad">JagX</span> and{" "}
-              <span className="text-gold-grad">JRILICENSE</span>: the products the world has not
-              seen yet
+              <span className="text-gold-grad">JagX</span> and{" "}
+              <span className="text-gold-grad">JRILICENSE</span>: we build the tools we wish Africa already owned
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Perfume, autonomy and domestic robotics — a pipeline mapped for 2032 to 2046, priced
-              in rumour, and drawn out of a blueprint that was never meant to leave the room.
+              Perfume, autonomy, domestic robotics, AI, secure social, and continental security — a
+              pipeline mapped for 2032 to 2046, owned end to end by us.
             </p>
             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
-              By Sandhya Ramesh
+              Intelligence that stays home. Security that travels the continent.
             </p>
           </div>
         </div>
@@ -78,101 +75,67 @@ function Index() {
       </section>
 
       <article className="mx-auto max-w-3xl px-5 pb-8">
-        <Kicker>The report</Kicker>
+        <Kicker>From us</Kicker>
         <h2 className="mt-4 font-display text-3xl sm:text-4xl">
-          Two names, one pipeline, and a launch window nobody else is writing about
+          Two names, one stack, one long runway
         </h2>
         <div className="mt-6 space-y-5 text-[17px] leading-8 text-muted-foreground">
           <p>
-            <span className="float-left mr-3 mt-1 font-display text-6xl leading-none text-gold">T</span>
-            here is a version of the next twenty years that has already been drawn, costed and
-            filed away — and almost none of it is public. JagX and JRILICENSE, two names that sit
-            beside each other on the same pipeline, are working toward a product slate that,
-            according to everything gathered for this report, is not expected to reach buyers
-            before <span className="text-foreground">mid-2032</span>, and in its fullest form may
-            not be complete until <span className="text-foreground">2046</span>. This publication
-            is the first to describe it.
+            <span className="float-left mr-3 mt-1 font-display text-6xl leading-none text-gold">W</span>
+            e started JagX on <span className="text-foreground">15 August 2022</span> because too much
+            of the technology that shapes daily life across Africa is designed somewhere else. In{" "}
+            <span className="text-foreground">2025</span> we formalised JRILICENSE so every product,
+            model, and design can be licensed and protected without us losing ownership.
           </p>
           <p>
-            The slate splits cleanly into three families. A fragrance house, built around a
-            standard JagX perfume and a premium expression positioned distinctly above it. A
-            mobility arm with two self-driving vehicles occupying two very different rungs of the
-            market. And a robotics line aimed at the home, priced to sit somewhere between a
-            second car and a serious kitchen renovation.
+            The slate splits into clear families: a fragrance house with a standard and premium bottle;
+            a mobility arm with two self-driving vehicles; a robotics line for the home; and the wider
+            software stack — AI, Connect, OS, Silicon, Shield, and{" "}
+            <span className="text-foreground">JagX Intelligent Military</span> for the protection of
+            Africa as a whole, not one state’s private force.
           </p>
           <p>
-            What makes the slate unusual is not any single object. It is the spread. Very few
-            houses attempt scent, autonomy and robotics from the same table, and fewer still try
-            it across a fourteen-year runway. That runway is the story: JagX and JRILICENSE are
-            not building for the next product cycle. They are building for a decade that has not
-            arrived.
+            We are still early. Most product lines are in build or design and have not yet generated
+            revenue. The one clear commercial signal so far is{" "}
+            <span className="text-foreground">JagX Connect</span>, which brought in about{" "}
+            <span className="text-gold">₦195,250</span> in its first year. Modest, but real.
           </p>
 
           <h3 className="pt-6 font-display text-2xl text-foreground">The fragrance ladder</h3>
           <p>
-            Two tiers, deliberately separated. The standard JagX perfume anchors the line. Above
-            it sits the premium bottle, and the gap between them is not cosmetic — a single unit
-            of the premium fragrance is expected to land anywhere between{" "}
-            <span className="text-gold">$2,500 and $7,000</span>, a band that puts it beside
-            private-blend houses rather than department-store counters. A premium JagX perfume, in
-            other words, costs meaningfully more than a JagX perfume, and that separation appears
-            to be intentional brand architecture rather than a pricing accident.
+            Two tiers, deliberately separated. The standard JagX perfume anchors the line. Above it
+            sits the premium bottle at roughly{" "}
+            <span className="text-gold">$2,500–$7,000</span> — private-blend territory, not
+            department-store counters.
           </p>
 
           <h3 className="pt-6 font-display text-2xl text-foreground">Two cars, two markets</h3>
           <p>
             The domestic self-driving car is the volume play, projected at{" "}
-            <span className="text-gold">$20,000 to $78,000</span> — a range wide enough to cover
-            everything from a stripped commuter trim to a fully specified family vehicle. The
-            second vehicle is a different proposition entirely, projected between{" "}
-            <span className="text-gold">$130,000 and $500,000</span>. At the top of that band you
-            are no longer buying transport; you are buying a limited object with an autonomy stack
-            attached.
-          </p>
-          <p>
-            Critically, neither car is being fabricated end to end in-house. The plan described to
-            this publication involves a{" "}
-            <span className="text-foreground">collaboration with a Chinese manufacturer</span> for
-            the parts, with JagX and JRILICENSE handling the build and assembly rather than the
-            component manufacturing. It is the pragmatic route — the same route most new entrants
-            eventually take — and it is the single largest reason the 2032 window is plausible at
-            all.
+            <span className="text-gold">$20,000–$78,000</span>. The flagship sits at{" "}
+            <span className="text-gold">$130,000–$500,000</span>. We plan to collaborate with a
+            Chinese manufacturer for parts while we handle build, assembly, software, and service —
+            every part returns to JagX & JRILICENSE.
           </p>
 
           <h3 className="pt-6 font-display text-2xl text-foreground">The robot</h3>
           <p>
-            The robotics unit is projected at <span className="text-gold">$15,000 to $30,000</span>.
-            Positioned for the home rather than the factory floor, it is the product most exposed
-            to timing: too early and the cost curve punishes it, too late and the category is
-            already crowded. Its placement inside the same launch window as the vehicles suggests
-            the two are meant to share hardware thinking.
+            The household unit is projected at <span className="text-gold">$15,000–$30,000</span>,
+            meant to share hardware thinking with the vehicle stack inside the same launch window.
           </p>
 
-          <h3 className="pt-6 font-display text-2xl text-foreground">Where the money stands today</h3>
+          <h3 className="pt-6 font-display text-2xl text-foreground">Where we stand today</h3>
           <p>
-            As this is written, in <span className="text-foreground">August 2026</span>, the
-            combined JagX and JRILICENSE operation is understood to be worth somewhere between{" "}
-            <span className="text-gold">$3,000 and $20,000</span>. Its owner,{" "}
-            <span className="text-foreground">Gbadamosi Tajudeen</span> — also recorded as{" "}
-            <span className="text-foreground">Gbadamosi Tajudeen Olajide</span> — is placed at{" "}
-            <span className="text-gold">$30 to $1,000</span>. Those two numbers, set against a
-            product slate that reaches half a million dollars a unit, are the most honest thing in
-            this report. Nothing here is funded yet. Everything here is intent.
+            As of <span className="text-foreground">2026</span>, the combined operation is still at
+            an early capital stage. Product timelines through 2032–2046 are planning windows, not
+            retail promises. We publish them so partners and our team can see the scale of the work.
           </p>
 
-          <h3 className="pt-6 font-display text-2xl text-foreground">On the blueprint</h3>
+          <h3 className="pt-6 font-display text-2xl text-foreground">Blueprints & expansion</h3>
           <p>
-            The visual reconstruction of the vehicle published on this site does not come from a
-            press kit. It comes from a{" "}
-            <span className="text-foreground">leaked blueprint</span> — an engineering document,
-            not a marketing render — and it is the only reason anyone outside the project has an
-            idea of the shape. Read it as a technical intention rather than a finished car. Panels
-            move. Proportions move. Blueprints are arguments, not photographs.
-          </p>
-          <p>
-            More reporting will follow on this site as further material is provided. For now, this
-            stands as the earliest public account of what JagX and JRILICENSE intend to sell, when
-            they intend to sell it, and what they expect people to pay.
+            Vehicle, uniform, and operational kit blueprints are ours. Security dress and operational
+            shirts are designed for African climates. We plan presence from Nigeria outward — Burkina
+            Faso, Sierra Leone, South Africa, and twelve further priority countries through 2035–2045.
           </p>
         </div>
 
@@ -187,7 +150,7 @@ function Index() {
             to="/blueprint"
             className="rounded-sm border border-border px-5 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
           >
-            Read the blueprint
+            Read the blueprints
           </Link>
         </div>
       </article>
@@ -198,7 +161,7 @@ function Index() {
           <figure className="card-lift overflow-hidden rounded-md">
             <img
               src={perfume}
-              alt="Premium JagX fragrance bottle concept in dark faceted glass with a gold cap"
+              alt="Premium JagX fragrance bottle concept"
               width={1024}
               height={1024}
               loading="lazy"
@@ -215,7 +178,7 @@ function Index() {
           <figure className="card-lift overflow-hidden rounded-md">
             <img
               src={robot}
-              alt="Concept of the JagX household robot in white shell with gold seams"
+              alt="JagX household robot concept"
               width={1024}
               height={1024}
               loading="lazy"
