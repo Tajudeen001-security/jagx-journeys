@@ -9,9 +9,9 @@ export const Route = createFileRoute("/valuation")({
     meta: socialMeta({
       origin: loaderData?.origin ?? "",
       path: "/valuation",
-      title: "Capital & Timeline — JagX & JRILICENSE",
+      title: "Timeline & Future Investment — JagX & JRILICENSE",
       description:
-        "What it took to start JagX (2022) and JRILICENSE (2025), Connect first-year revenue of about ₦195,250, and the 2032–2046 product window.",
+        "Connect first-year revenue, product timeline 2032–2046, and estimated future programme investment for cars, mobile and robotics.",
       image: "/og/home.jpg",
     }),
     links: [{ rel: "canonical", href: "/valuation" }],
@@ -20,81 +20,71 @@ export const Route = createFileRoute("/valuation")({
 });
 
 const TIMELINE = [
-  {
-    year: "15 Aug 2022",
-    text: "JagX founded. Lean start — roughly ₦45–85 million covering registration, early compute, brand protection and a small core team.",
-  },
-  {
-    year: "2025",
-    text: "JRILICENSE formalised. Setup capital about ₦180–350 million for legal, IP, compliance and first-year operations so the stack can be licensed and protected.",
-  },
+  { year: "15 Aug 2022", text: "JagX founded in Nigeria." },
+  { year: "2025", text: "JRILICENSE established for licensing and IP protection." },
   {
     year: "2026",
-    text: "JagX Connect first-year revenue about ₦195,250. Other product lines still in build and not yet generating revenue. This official site published under our own name.",
+    text: "JagX Connect first-year revenue about ₦195,250. Other product lines still in build. Official site under our own name.",
   },
   {
     year: "2027–2031",
-    text: "Runway years: parts collaboration, prototypes, fragrance formulation, robotics test units, AI and Shield maturity.",
+    text: "Runway: prototypes, fragrance, robotics test units, AI and Shield maturity, parts partnerships.",
   },
   {
     year: "Mid-2032",
-    text: "Earliest planned launch window. Fragrance and domestic vehicle expected to lead — lower engineering risk.",
+    text: "Earliest planned launch window — fragrance and domestic vehicle expected to lead.",
   },
   {
     year: "2035–2045",
     text: "Continental expansion: Nigeria → Burkina Faso → Sierra Leone → South Africa and twelve further priority countries.",
   },
-  {
-    year: "2046",
-    text: "Far edge of the stated product window — slate expected to be substantially complete.",
-  },
+  { year: "2046", text: "Far edge of the stated product window." },
 ];
 
 function Valuation() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-14">
-      <Kicker>Capital</Kicker>
+      <Kicker>Timeline & investment</Kicker>
       <h1 className="mt-4 max-w-3xl font-display text-4xl sm:text-6xl">
-        What it took to start — and where the money is today
+        Where we are — and what future programmes may cost
       </h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
-        We publish these figures because honesty is part of the brand. Long product prices mean
-        nothing if people cannot see the capital path behind them.
+        Opening capital for JagX and JRILICENSE is confidential. Below we share only public progress
+        and planning estimates for large future programmes.
       </p>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         <Stat
-          label="JagX start · 2022"
-          value="₦45–85 million"
-          note="Registration, compute, brand protection, small core team."
-        />
-        <Stat
-          label="JRILICENSE start · 2025"
-          value="₦180–350 million"
-          note="Legal, IP, compliance, first-year operations."
-        />
-        <Stat
           label="JagX Connect · first year"
           value="≈ ₦195,250"
-          note="Only product line with real revenue so far."
+          note="Only product line with confirmed revenue so far."
         />
         <Stat
-          label="Other lines"
-          value="Still in build"
-          note="AI, OS, Silicon, Mobility, Shield, fragrance, robotics — no revenue yet."
+          label="Start capital · 2022 & 2025"
+          value="Confidential"
+          note="Internal figures are not published on this site."
+        />
+        <Stat
+          label="Domestic car programme (est.)"
+          value="$8–25M"
+          note="Planning estimate through first production tranche — tooling, software, assembly setup."
+        />
+        <Stat
+          label="Flagship + robotics (est.)"
+          value="$40–120M"
+          note="Multi-year estimate if flagship autonomy and robot lines scale together."
         />
       </div>
 
       <div className="mt-12 max-w-3xl space-y-5 text-[17px] leading-8 text-muted-foreground">
         <p>
-          Flagship vehicles and premium fragrance sit at the high end of the future slate. That is
-          ambition measured in years, partnerships and tooling — not cash already in the bank. The
-          Chinese parts collaboration is how we turn an impossible capital ask into a manageable
-          assembly and software programme.
+          Future spend numbers are planning ranges, not committed budgets. They help partners and our
+          team size the work for vehicles, mobile platforms and robotics. Parts collaboration and staged
+          launches are how we keep the path realistic.
         </p>
         <p>
-          JagX invents and operates. JRILICENSE licenses and protects. That split is how the stack
-          stays ours while it travels across Africa.
+          JagX invents and operates. JRILICENSE licenses and protects. That split keeps ownership clear
+          as the stack grows.
         </p>
       </div>
 

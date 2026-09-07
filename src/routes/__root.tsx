@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Official site of JagX & JRILICENSE. Founded 15 August 2022. AI, secure social, mobility, robotics, fragrance, and JagX Intelligent Military for the protection of Africa. Launch window 2032–2046.",
+          "Official site of JagX & JRILICENSE. Founded 15 August 2022. AI, secure social, mobility, robotics, fragrance, and JagX Intelligent Military. Launch window 2032–2046.",
       },
       { name: "author", content: "JagX & JRILICENSE" },
       { property: "og:site_name", content: "JagX & JRILICENSE" },
@@ -97,7 +97,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/logo.svg", type: "image/svg+xml" },
+      { rel: "apple-touch-icon", href: "/logo.svg" },
     ],
     scripts: [
       {
@@ -107,7 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "JagX & JRILICENSE",
           description:
-            "Technology group building AI, secure social, mobility, robotics, fragrance and continental security systems. Founded 15 August 2022 in Nigeria.",
+            "Technology group building AI, secure social, mobility, robotics, fragrance and security systems. Founded 15 August 2022 in Nigeria.",
           foundingDate: "2022-08-15",
           slogan: "Intelligence that stays home. Security that travels the continent.",
         }),
