@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/products", label: "Products" },
+  { to: "/military", label: "Military" },
   { to: "/founder", label: "Founder" },
   { to: "/blueprint", label: "Blueprints" },
   { to: "/valuation", label: "Capital" },
@@ -13,7 +14,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3">
-        <Link to="/" className="flex shrink-0 items-baseline gap-2">
+        <Link to="/" className="flex shrink-0 items-center gap-2">
+          <img src="/logo.svg" alt="" width={28} height={28} className="h-7 w-7" />
           <span className="whitespace-nowrap font-display text-2xl leading-none text-gold-grad">
             JagX &amp; JRILICENSE
           </span>
