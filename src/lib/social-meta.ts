@@ -14,7 +14,7 @@ export function socialMeta({
   title,
   description,
   image,
-  type = "article",
+  type = "website",
 }: SocialMetaArgs) {
   const url = `${origin}${path}`;
   const imageUrl = `${origin}${image}`;
@@ -22,9 +22,9 @@ export function socialMeta({
   return [
     { title },
     { name: "description", content: description },
-    { name: "author", content: "Sandhya Ramesh" },
+    { name: "author", content: "JagX & JRILICENSE" },
 
-    { property: "og:site_name", content: "The Future" },
+    { property: "og:site_name", content: "JagX & JRILICENSE" },
     { property: "og:locale", content: "en_US" },
     { property: "og:type", content: type },
     { property: "og:title", content: title },
@@ -41,7 +41,7 @@ export function socialMeta({
     { name: "twitter:description", content: description },
     { name: "twitter:image", content: imageUrl },
     { name: "twitter:image:alt", content: title },
-    { name: "twitter:creator", content: "@sandhyaramesh" },
-    { name: "twitter:site", content: "@thefuture" },
+    { name: "twitter:creator", content: "@jagx" },
+    { name: "twitter:site", content: "@jagx" },
   ];
 }

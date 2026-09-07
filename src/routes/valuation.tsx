@@ -9,63 +9,92 @@ export const Route = createFileRoute("/valuation")({
     meta: socialMeta({
       origin: loaderData?.origin ?? "",
       path: "/valuation",
-      title: "JagX & JRILICENSE Valuation in 2026 — The Future",
+      title: "Capital & Timeline — JagX & JRILICENSE",
       description:
-        "What JagX and JRILICENSE are worth in August 2026, what founder Gbadamosi Tajudeen Olajide is worth, and the distance between today's figures and a $500,000 flagship.",
+        "What it took to start JagX (2022) and JRILICENSE (2025), Connect first-year revenue of about ₦195,250, and the 2032–2046 product window.",
       image: "/og/home.jpg",
     }),
     links: [{ rel: "canonical", href: "/valuation" }],
   }),
-
   component: Valuation,
 });
 
 const TIMELINE = [
-  { year: "2026", text: "The operation is valued between $3,000 and $20,000. The slate exists as design, documentation and intent. This report is published." },
-  { year: "2027–2031", text: "The runway years: parts collaboration formalised, prototype assembly, fragrance formulation and the first robotics test units." },
-  { year: "Mid-2032", text: "The earliest credible launch window. Expect the fragrance line and the domestic vehicle to lead — they carry the lowest engineering risk." },
-  { year: "2033–2040", text: "Flagship autonomy and the household robot scale into the market, assuming the parts partnership holds." },
-  { year: "2046", text: "The far edge of the stated window, by which the slate is expected to be complete." },
+  {
+    year: "15 Aug 2022",
+    text: "JagX founded. Lean start — roughly ₦45–85 million covering registration, early compute, brand protection and a small core team.",
+  },
+  {
+    year: "2025",
+    text: "JRILICENSE formalised. Setup capital about ₦180–350 million for legal, IP, compliance and first-year operations so the stack can be licensed and protected.",
+  },
+  {
+    year: "2026",
+    text: "JagX Connect first-year revenue about ₦195,250. Other product lines still in build and not yet generating revenue. This official site published under our own name.",
+  },
+  {
+    year: "2027–2031",
+    text: "Runway years: parts collaboration, prototypes, fragrance formulation, robotics test units, AI and Shield maturity.",
+  },
+  {
+    year: "Mid-2032",
+    text: "Earliest planned launch window. Fragrance and domestic vehicle expected to lead — lower engineering risk.",
+  },
+  {
+    year: "2035–2045",
+    text: "Continental expansion: Nigeria → Burkina Faso → Sierra Leone → South Africa and twelve further priority countries.",
+  },
+  {
+    year: "2046",
+    text: "Far edge of the stated product window — slate expected to be substantially complete.",
+  },
 ];
 
 function Valuation() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-14">
-      <Kicker>The numbers</Kicker>
+      <Kicker>Capital</Kicker>
       <h1 className="mt-4 max-w-3xl font-display text-4xl sm:text-6xl">
-        A $3,000 company drawing a $500,000 car
+        What it took to start — and where the money is today
       </h1>
       <p className="mt-5 max-w-2xl leading-relaxed text-muted-foreground">
-        The most revealing figures in this story are not the product prices. They are the ones
-        attached to the company and the man behind it, recorded as they stand in August 2026.
+        We publish these figures because honesty is part of the brand. Long product prices mean
+        nothing if people cannot see the capital path behind them.
       </p>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
         <Stat
-          label="JagX + JRILICENSE · Aug 2026"
-          value="$3,000 – $20,000"
-          note="Combined worth of the operation at the time of writing."
+          label="JagX start · 2022"
+          value="₦45–85 million"
+          note="Registration, compute, brand protection, small core team."
         />
         <Stat
-          label="Owner · Gbadamosi Tajudeen Olajide"
-          value="$30 – $1,000"
-          note="Also recorded as Gbadamosi Tajudeen. Figure as at August 2026."
+          label="JRILICENSE start · 2025"
+          value="₦180–350 million"
+          note="Legal, IP, compliance, first-year operations."
+        />
+        <Stat
+          label="JagX Connect · first year"
+          value="≈ ₦195,250"
+          note="Only product line with real revenue so far."
+        />
+        <Stat
+          label="Other lines"
+          value="Still in build"
+          note="AI, OS, Silicon, Mobility, Shield, fragrance, robotics — no revenue yet."
         />
       </div>
 
       <div className="mt-12 max-w-3xl space-y-5 text-[17px] leading-8 text-muted-foreground">
         <p>
-          Set those two numbers beside a flagship vehicle projected at half a million dollars and
-          the shape of the ambition becomes clear. This is not a company scaling down from
-          resources; it is a company scaling up from an idea. The fourteen-year window is not
-          caution — it is arithmetic. The distance between $20,000 and a functioning autonomous
-          vehicle programme is measured in years, partnerships and borrowed tooling, and the plan
-          appears to account for all three.
+          Flagship vehicles and premium fragrance sit at the high end of the future slate. That is
+          ambition measured in years, partnerships and tooling — not cash already in the bank. The
+          Chinese parts collaboration is how we turn an impossible capital ask into a manageable
+          assembly and software programme.
         </p>
         <p>
-          The parts collaboration with a Chinese manufacturer is the hinge. It converts an
-          impossible capital requirement into a manageable one, and it is the difference between a
-          slate that reads as fantasy and a slate that reads as a long, difficult, plausible route.
+          JagX invents and operates. JRILICENSE licenses and protects. That split is how the stack
+          stays ours while it travels across Africa.
         </p>
       </div>
 
