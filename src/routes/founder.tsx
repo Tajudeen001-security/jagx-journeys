@@ -16,9 +16,9 @@ export const Route = createFileRoute("/founder")({
     meta: socialMeta({
       origin: loaderData?.origin ?? "",
       path: "/founder",
-      title: "Gbadamosi Tajudeen — JagwaX, the Founder of JagX and JRILICENSE",
+      title: "Founder — Gbadamosi Tajudeen (JagwaX) | JagX & JRILICENSE",
       description:
-        "Gbadamosi Tajudeen Olajide, known as JagwaX, is the founder of JagX and JRILICENSE, JagX Vision, JagX AI, JagX Datas, the JagX AI API key system and jagx-buddy-connect.name.ng. He does not show his face.",
+        "Gbadamosi Tajudeen Olajide, known as JagwaX, founded JagX on 15 August 2022 and JRILICENSE in 2025. Official portfolio across AI, Connect, mobility, fragrance and more.",
       image: "/og/founder.jpg",
       type: "profile",
     }),
@@ -32,8 +32,7 @@ export const Route = createFileRoute("/founder")({
           name: "Gbadamosi Tajudeen Olajide",
           alternateName: "JagwaX",
           jobTitle: "Founder",
-          founder: true,
-          worksFor: { "@type": "Organization", name: "JagX" },
+          worksFor: { "@type": "Organization", name: "JagX & JRILICENSE" },
         }),
       },
     ],
@@ -44,45 +43,45 @@ export const Route = createFileRoute("/founder")({
 const VENTURES = [
   {
     name: "JagX",
-    line: "Fragrance, mobility and lifestyle",
+    line: "House · founded 15 August 2022",
     image: jagxAi,
-    body: "The house itself. Perfume at the entry, two autonomous vehicles above it, and an entire wardrobe of tailoring, leather and grooming carrying the same panther mark. Everything on the slate reported elsewhere on this site begins here.",
+    body: "Fragrance, mobility, lifestyle and the wider stack. Everything on this site begins under the JagX mark.",
   },
   {
     name: "JRILICENSE",
-    line: "Robotics",
+    line: "Licensing & robotics · 2025",
     image: jagxDatas,
-    body: "The robotics arm, responsible for the household humanoid staged under the 'Synergy Platform' board beside the cars. JagwaX runs it as a sibling of JagX rather than a subsidiary — one intelligence, two bodies.",
+    body: "Licensing arm and robotics programme — sibling to JagX so products can be protected and commercialised without losing ownership.",
   },
   {
     name: "JagX Vision",
     line: "Jewellery authentication",
     image: jagxVision,
-    body: "A scanning system for jewellery that tells you whether a stone or a setting is real or fake. It reads the piece and returns an authenticity report — the kind of verification that normally requires a lab and a week of waiting.",
+    body: "Scanning system that returns authenticity reports on stones and settings — a working instrument under the house mark.",
   },
   {
     name: "JagX AI",
     line: "Artificial intelligence",
     image: jagxAi,
-    body: "The intelligence layer underneath the rest of the portfolio. It is the same thinking that shows up in the vehicles' supervision interface and in the robot's sensing, exposed as a product in its own right.",
+    body: "Multi-agent intelligence for builders and institutions; free starter API keys; path to on-device models. Still largely in build for commercial scale.",
   },
   {
     name: "JagX Datas",
     line: "Backend platform",
     image: jagxDatas,
-    body: "A backend system in the mould of Supabase — database, auth, storage and APIs in one place — built with security as the headline rather than the footnote. End-to-end encryption, hardened access control and audit logging are the pitch, not an add-on tier.",
+    body: "Database, auth, storage and APIs with security as the headline claim.",
   },
   {
     name: "JagX AI API Key System",
     line: "Developer infrastructure",
     image: jagxApi,
-    body: "The key issuance and governance layer for JagX AI: generate keys, scope them, rate-limit them, watch usage in real time and revoke them instantly. It is the piece that turns the model into something other developers can safely build on.",
+    body: "Key issuance, scope, rate limits, monitoring and revocation for safe external use of JagX AI.",
   },
   {
-    name: "jagx-buddy-connect.name.ng",
-    line: "Social platform",
+    name: "JagX Buddy Connect",
+    line: "Social · live",
     image: jagxBuddy,
-    body: "A connection platform running on his own domain, and the most public-facing thing he has shipped so far. It is also the clearest signal of how he works: build the network, then build the products the network will buy.",
+    body: "Secure social on jagx-buddy-connect.name.ng — first product line with real revenue (about ₦195,250 in year one).",
   },
 ];
 
@@ -93,26 +92,25 @@ function Founder() {
       <div className="mt-6 grid gap-10 md:grid-cols-2 md:items-center">
         <div>
           <h1 className="font-display text-4xl leading-[1.05] sm:text-6xl">
-            Gbadamosi Tajudeen, the man they call{" "}
+            Gbadamosi Tajudeen, known as{" "}
             <span className="text-gold-grad">JagwaX</span>
           </h1>
           <p className="mt-5 text-[17px] leading-8 text-muted-foreground">
-            He founded JagX and JRILICENSE, and he does not show his face. Every image of him that
-            exists is the same arrangement: the head covered, the lower face covered, and only the
-            eyes left in the light. It is deliberate, and for now it is not up for negotiation — the
-            work is meant to arrive before the man does.
+            Founder of JagX (15 August 2022) and JRILICENSE (2025). The work is meant to arrive with
+            a clear mark — intelligence that stays home, security that travels the continent — from
+            Nigeria outward across Africa.
           </p>
         </div>
         <figure className="card-lift overflow-hidden rounded-md">
           <img
             src={founder1}
-            alt="Gbadamosi Tajudeen, known as JagwaX, photographed with his head and face covered so only his eyes are visible"
+            alt="Gbadamosi Tajudeen, known as JagwaX"
             width={896}
             height={1152}
             className="h-[28rem] w-full object-cover object-top"
           />
           <figcaption className="border-t border-border px-4 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70">
-            JagwaX · Portrait I · Navy tailoring, panther pin
+            JagwaX · Portrait I
           </figcaption>
         </figure>
       </div>
@@ -121,29 +119,27 @@ function Founder() {
         <figure className="card-lift order-2 overflow-hidden rounded-md md:order-1">
           <img
             src={founder2}
-            alt="Second concealed portrait of JagwaX in a black high-collar technical overcoat"
+            alt="JagwaX second portrait"
             width={896}
             height={1152}
             loading="lazy"
             className="h-[28rem] w-full object-cover object-top"
           />
           <figcaption className="border-t border-border px-4 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground/70">
-            JagwaX · Portrait II · Black technical overcoat
+            JagwaX · Portrait II
           </figcaption>
         </figure>
         <div className="order-1 space-y-5 text-[17px] leading-8 text-muted-foreground md:order-2">
-          <h2 className="font-display text-3xl text-foreground">Why the face stays hidden</h2>
+          <h2 className="font-display text-3xl text-foreground">Why the work comes first</h2>
           <p>
-            Anonymity is a strategy as much as a preference. A founder who is not a face cannot be
-            the story, and JagwaX would rather the panther mark be recognised before he is. When he
-            is photographed the clothes change — a navy suit with a silver panther on the lapel in
-            one frame, a black high-collar overcoat with bronze stitching in the next — but the
-            covering does not. Only the eyes.
+            The public face of the house is the panther mark and the product stack — AI, Connect,
+            mobility, fragrance, robotics, Shield and Intelligent Military. Expansion is planned from
+            Nigeria to Burkina Faso, Sierra Leone, South Africa and twelve further priority countries
+            through 2035–2045.
           </p>
           <p>
-            He has said nothing publicly about when that ends. Reading the release schedule, the
-            reasonable guess is that the reveal is being kept as an asset for the launch window
-            rather than spent early.
+            We invent under JagX. We license and protect under JRILICENSE. That is how the stack stays
+            ours.
           </p>
         </div>
       </div>
@@ -151,12 +147,11 @@ function Founder() {
       <div className="mt-20">
         <Kicker>The portfolio</Kicker>
         <h2 className="mt-4 max-w-3xl font-display text-3xl sm:text-5xl">
-          Seven ventures under one mark
+          Ventures under one mark
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
-          The perfume and the cars are the visible half. The other half is infrastructure — AI,
-          a backend platform, an API key system and an authentication scanner — and it is the half
-          that explains how one person expects to deliver the rest.
+          Perfume and cars are the visible half. Infrastructure — AI, backend, API keys, Connect —
+          is how the rest gets delivered.
         </p>
 
         <div className="mt-12 space-y-14">
@@ -168,7 +163,7 @@ function Founder() {
               <figure className="card-lift overflow-hidden rounded-md">
                 <img
                   src={v.image}
-                  alt={`${v.name} brand visual`}
+                  alt={`${v.name}`}
                   width={1024}
                   height={768}
                   loading="lazy"
@@ -186,7 +181,7 @@ function Founder() {
       </div>
 
       <p className="mt-16 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/60">
-        Reported by Sandhya Ramesh · The Future · August 2026
+        JagX & JRILICENSE · Official · Founded 15 August 2022
       </p>
     </div>
   );
